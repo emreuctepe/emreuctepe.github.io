@@ -1,0 +1,135 @@
+:root{
+    --animation_time: 4s;
+}
+
+.black{
+    width: 120%; height: var(--code_height);
+    z-index: 2;
+    position: absolute;
+ 
+    border-radius: 0px;
+    background: rgb(0, 0, 0);
+  }
+  
+  .d1{
+    animation: slider0 var(--animation_time) infinite linear;
+  }
+
+  .d2{
+    animation: slider1 var(--animation_time) infinite linear;
+  }
+  .d3{
+    animation: slider2 var(--animation_time) infinite linear;
+  }
+
+  .d4{
+    animation: slider3 var(--animation_time) infinite linear;
+  }
+  .d5{
+    animation: slider4 var(--animation_time) infinite linear;
+  }
+  .d6{
+    animation: slider5 var(--animation_time) infinite linear;
+  }
+  @keyframes slider0 { 
+    0%{
+        left: 0;
+    } 
+
+    10%{
+        left: 120%;
+    }
+
+    100%{
+        left: 120%;
+    }
+    }
+
+    @keyframes slider1 { 
+        0%{
+            left: 0;
+        } 
+    
+        10%{
+            left: 0%;
+        }
+
+        20%{
+            left: 120%;
+        }
+    
+        100%{
+            left: 120%;
+        }
+        }
+
+        @keyframes slider2 { 
+            0%{
+                left: 0;
+            } 
+        
+            20%{
+                left: 0%;
+            }
+    
+            30%{
+                left: 120%;
+            }
+        
+            100%{
+                left: 120%;
+            }
+            }
+ 
+            @keyframes slider3 { 
+                0%{
+                    left: 0;
+                } 
+            
+                30%{
+                    left: 0%;
+                }
+        
+                40%{
+                    left: 120%;
+                }
+            
+                100%{
+                    left: 120%;
+                }
+                }
+                @keyframes slider4 { 
+                    0%{
+                        left: 0;
+                    } 
+                
+                    40%{
+                        left: 0%;
+                    }
+            
+                    50%{
+                        left: 120%;
+                    }
+                
+                    100%{
+                        left: 120%;
+                    }
+                    }
+
+                    @keyframes slider5 { 
+                        0%{
+                            left: 0;
+                        } 
+                    
+                        50%{
+                            left: 0%;
+                        }
+                
+                        60%{
+                            left: 120%;
+                        }
+                    
+                        100%{
+                            left: 120%;
+                        }
+                        }

@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
+}
+:root {  
+    --purple: rgb(249, 38, 114);
+    --lime: rgb(166, 226, 46);
+    --white:rgb(226, 226, 226);
+    --sand: rgb(255, 231, 146);
+    --code_height: 75%;
+    --screen_inch:1.25;
+    --pc_screen_w: calc(12.8rem * var(--screen_inch));
+    --pc_screen_h: calc(13.5rem * var(--screen_inch));
+  }
+  
+
+html,body {
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+    place-items: center;
+    
+  }
+  
+div{
+    position: relative;
+    /* border: 1px solid red; */
+    min-width: min-content;
+    min-height: min-content;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+div:nth-child(1){
+    top: 100px;
+    position: relative;
+    user-select: none;
+}
+div:nth-child(2){
+    top: -100px;
+}
+
+.pc_box svg{
+    z-index: 2;
+    width: var(--pc_screen_w);
+    height: var(--pc_screen_h);
+}
+
+  @keyframes background-pan {
+    from {
+      background-position: 0% center;
+    }
+    
+    to {
+      background-position: -200% center;
+    }
+  }
+  
+  @keyframes scale {
+    from, to {
+      transform: scale(0);
+    }
+    
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    
+    to {
+      transform: rotate(180deg);
+    }
+  }
+
+  h1 {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(1.25em, 1.25vw, 2.5em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+    
+  }
+  
+  h1 > .magic {
+    display: inline-block;
+    position: relative;
+    
+  }
+  
+  h1 > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+    
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+  }
+  
+  h1 > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+  }
+  
+  h1 > .magic > .magic-star > svg > path {
+    fill: white;
+  }
+  
+  h1 > .magic > .magic-text {
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+      to right,
+      var(--purple),
+      var(--lime),
+      var(--sand),
+      var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+  }
+
+  .codes{
+    position: absolute;
+    min-width:  calc(var(--pc_screen_w) / 1.5); 
+    height: calc(var(--pc_screen_h) / 2.5);
+    /* border: 1px salmon solid; */
+    background-color: transparent;
+    top: 0; left: 0;
+    margin: 15px 20px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .column{
+    width:  100%; height: 100%;
+    /* border: 1px solid rgb(216, 253, 5); */
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    position: relative;
+    animation: delayAnimation 7s linear infinite;
+  }
+
+
+
+
+  .lime{
+    min-width: 30%; height: var(--code_height);
+    background-color: var(--lime);
+    margin: 0px 1px;
+    z-index: 1;
+    border-radius: 10px;
+  }
+
+  .sand{
+    width: 55px; height: var(--code_height);
+    background-color: var(--sand);
+    margin: 0px 1px;
+    z-index: 1;
+    border-radius: 10px;
+  }
+
+  .white{
+    height: var(--code_height);
+    background-color: var(--white);
+    margin: 0px 50px;
+    z-index: 1;
+    border-radius: 10px;
+  }
+  .pink{
+    min-width: 20px; height: var(--code_height);
+    background-color: var(--purple);
+    z-index: 1;
+    border-radius: 10px;
+  }
+
+
+
+
+
+@media (max-width: 1024px) {
+    :root {  
+        --purple: rgb(249, 38, 114);
+        --lime: rgb(166, 226, 46);
+        --white:rgb(226, 226, 226);
+        --sand: rgb(255, 231, 146);
+        --code_height: 75%;
+        --screen_inch:1;
+        --pc_screen_w: calc(12.8rem * var(--screen_inch));
+        --pc_screen_h: calc(13.5rem * var(--screen_inch));
+      }
+    
+}
+
+@media (max-height:750px) {
+
+  div:nth-child(2){
+    top: -100px;
+    place-self: end;
+}
+}
+
+@media (max-height:545px) {
+
+
+  .text_box{
+    min-width: 90%;
+  }
+
+  div:nth-child(1){
+    display: none;
+}
+
+div:nth-child(2){
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  
+}
+}
+
