@@ -1,1 +1,1 @@
-# emreuctepe.github.io
+[a link](http://emreuctepe.com)
