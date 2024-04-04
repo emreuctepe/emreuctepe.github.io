@@ -1,1 +1,1 @@
-[a link](http://emreuctepe.com)
+[emreuctepe.com](http://emreuctepe.com)
